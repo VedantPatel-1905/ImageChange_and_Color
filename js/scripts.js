@@ -3,17 +3,19 @@ const studentId = document.querySelector("#myStudentId");
 const changeBtn = document.querySelector("button.custColor");
 const randomBtn = document.querySelector(".randColor");
 const imageSelect = document.querySelector("#imageSelect");
-const imageArray = ["img1","img2","img3","img4","img5"];
 const imageOutput = document.querySelector("#images");
+// image array contains the name of the images in image folder
+const imageArray = ["img1","img2","img3","img4","img5"];
 
 // function to change bg color from user input and add student id
 function changeCustomColor() 
 {
-    let input = document.querySelector("#customNumber");
-    input = input.value;
+    // declaring variable to store input value from the user
+    let input = document.querySelector("#customNumber").value;
+    // setting my student number as text in paragraph tag
     studentId.textContent = "200552775";
-    console.log(input);
     
+    // if else ladder to assign the colors to respected range of numbers
     if (input >0 && input<= 20)
     {
         document.body.style.background = "green";
@@ -34,6 +36,7 @@ function changeCustomColor()
     {
         document.body.style.background = "yellow";
     }
+    // setting the color to red when the values i greater than 100 or less than 0
     else
     {
         document.body.style.background = "red";
@@ -45,7 +48,11 @@ function changeCustomColor()
 // function to change bg color from random no.
 function changeRandomColor() 
 {
+    // resetting the value of paragraph to empty 
+    studentId.textContent = "";
+    // declaring the array of colors 
     let colorArray = ["red","green","blue","orange","yellow","purple"];
+    // assigning the random background color to the body using random function from Math library
     document.body.style.background = colorArray[Math.floor(Math.random() * colorArray.length)];
 }
 
@@ -53,6 +60,7 @@ function changeRandomColor()
 function addList() {
     // Tip: you might have to check length condition so that the list does not keep growing when clicked
     // Tip: use createElement and appendChild inside every for loop to add elements to select list from array 
+    // for loop will iterate through image array and assign its values to the option value
     for (let i = 0; i < imageArray.length; i++) {
         let option = document.createElement("option");
         option.textContent = imageArray[i];
@@ -63,6 +71,7 @@ function addList() {
 
 // function to change image
 function changeImage() {
+    // this will set the src attribute of the img tag to the image selected by the user
     imageOutput.setAttribute("src","./img/"+imageSelect.value+".jpg");
 }
 

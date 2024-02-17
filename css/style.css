@@ -1,0 +1,33 @@
+section.container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #0e0e0e;
+    border-radius: 5px;
+}
+
+section.container > div
+{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    width: 100%;
+}
+section.container > div > label
+{
+    margin: 0 5px 0 0;
+}
+section.container > div > button
+{
+    margin: 0 3px;
+    height: 3em;
+}
+section.container > div > img
+{
+    height: 21em;
+    width: auto;
+}
+
